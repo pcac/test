@@ -1,11 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
         sh '''#!/bin/bash
-ls -l
-exit 0'''
+ls -l'''
       }
     }
   }
