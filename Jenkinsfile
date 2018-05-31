@@ -8,22 +8,15 @@ pipeline {
   }
   stages {
     stage('build') {
-      parallel {
-        stage('pwd') {
-          steps {
-            sh 'pwd'
-          }
-        }
-        stage('list') {
-          steps {
-            sh 'ls -alh'
-          }
-        }
-        stage('run build') {
-          steps {
-            sh 'go build app.go'
-          }
-        }
+      steps {
+        sh 'pwd'
+        sh 'ls -al'
+        sh 'go build app.go'
+      }
+    }
+    stage('done') {
+      steps {
+        echo 'done'
       }
     }
   }
