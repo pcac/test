@@ -1,9 +1,15 @@
 pipeline {
-  agent any
+  agent {
+    dockerfile {
+      filename 'Dockerfile'
+    }
+
+  }
   stages {
-    stage('error') {
+    stage('') {
       steps {
-        dockerNode(dockerHost: 'tcp://192.168.18.1:2375', image: 'golang:latest')
+        sh '''#!/bin/bash
+exit 0'''
       }
     }
   }
