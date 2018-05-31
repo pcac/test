@@ -26,15 +26,5 @@ pipeline {
         }
       }
     }
-    stage('sleep') {
-      steps {
-        sleep 5
-      }
-    }
-    stage('done') {
-      steps {
-        echo 'done'
-      }
-    }
   }
 }
