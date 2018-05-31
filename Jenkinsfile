@@ -9,8 +9,6 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'pwd'
-        sh 'ls -al'
         sh 'go build app.go'
       }
     }
@@ -19,5 +17,9 @@ pipeline {
         echo 'done'
       }
     }
+  }
+  environment {
+    GOROOT = '/go'
+    GOPATH = '/go'
   }
 }
