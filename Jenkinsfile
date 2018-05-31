@@ -1,17 +1,12 @@
 pipeline {
-  agent {
-    dockerfile {
-      filename 'Dockerfile'
+    agent {
+        docker { image 'golang:1.10.2' }
     }
-
-  }
-  stages {
-    stage('bash script') {
-      steps {
-        sh '''#!/bin/bash
-ls -al
-exit 0'''
-      }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'go version'
+            }
+        }
     }
-  }
 }
