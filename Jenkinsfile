@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('error') {
       steps {
-        sh '''#!/bin/bash
-ls -l'''
+        sh 'ls -l'
       }
     }
   }
