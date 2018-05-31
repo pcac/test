@@ -1,16 +1,14 @@
 pipeline {
   agent {
-    dockerfile {
-      filename 'Dockerfile'
+    docker {
+      image 'golang:1.10.2'
     }
 
   }
   stages {
-    stage('bash script') {
+    stage('build') {
       steps {
-        sh '''#!/bin/bash
-ls -al
-exit 0'''
+        sh 'pwd'
       }
     }
   }
