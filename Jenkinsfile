@@ -8,17 +8,10 @@ pipeline {
   }
   stages {
     stage('build') {
-      parallel {
-        stage('build') {
-          steps {
-            sh 'go build app.go'
-          }
-        }
-        stage('ls') {
-          steps {
-            sh 'ls -l'
-          }
-        }
+      steps {
+        sh '''ls -l
+go build app.go
+ls -l'''
       }
     }
   }
