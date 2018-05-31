@@ -7,8 +7,17 @@ pipeline {
   }
   stages {
     stage('done') {
-      steps {
-        echo 'done'
+      parallel {
+        stage('done') {
+          steps {
+            echo 'done'
+          }
+        }
+        stage('') {
+          steps {
+            sh 'docker version'
+          }
+        }
       }
     }
   }
