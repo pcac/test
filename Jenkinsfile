@@ -13,6 +13,6 @@ pipeline {
     }
   }
   environment {
-    DOCKER_HOST = 'tcp://192.168.18.1:2375'
+    DOCKER_OPTS = '\'-h tcp://192.168.18.1:2375\''
   }
 }
