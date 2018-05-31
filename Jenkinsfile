@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('error') {
+    stage('') {
       steps {
-        sh 'ls -l'
+        dockerNode(dockerHost: 'unix:///var/run/docker.sock', image: 'golang:latest')
       }
     }
   }
