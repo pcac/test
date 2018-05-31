@@ -9,7 +9,9 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'go build app.go'
+        sh '''pwd
+ls -l
+go build app.go'''
       }
     }
   }
