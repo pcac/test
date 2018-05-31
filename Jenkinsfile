@@ -19,7 +19,6 @@ pipeline {
     }
   }
   environment {
-    GOROOT = '/go'
     GOPATH = '/go'
   }
 }
