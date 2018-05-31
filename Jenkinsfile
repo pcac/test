@@ -6,9 +6,10 @@ pipeline {
 
   }
   stages {
-    stage('') {
+    stage('bash script') {
       steps {
         sh '''#!/bin/bash
+ls -al
 exit 0'''
       }
     }
