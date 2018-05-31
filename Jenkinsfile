@@ -12,10 +12,5 @@ pipeline {
         sh 'go build app.go'
       }
     }
-    stage('done') {
-      steps {
-        echo 'Done'
-      }
-    }
   }
 }
