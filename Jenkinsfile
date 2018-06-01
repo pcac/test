@@ -12,7 +12,7 @@ pipeline {
  -X POST \\
  -H "Content-Type:application/x-tar" \\
  --data-binary \'@pack.tar.gz\' \\
- \'http://192.168.18.1:2375/build?t=test:1.0.1\''''
+ \'http://192.168.18.1:2375/build?t=test:1.0.2\''''
       }
     }
   }
