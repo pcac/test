@@ -9,10 +9,14 @@ pipeline {
     stage('build') {
       steps {
         sh '''curl -fsSL \\
- -X POST \\
- -H "Content-Type:application/x-tar" \\
- --data-binary \'@pack.tar.gz\' \\
- \'http://192.168.18.1:2375/build?t=test:1.0.2\''''
+    -X POST \\
+    -H "Content-Type:application/x-tar" \\
+    --cacert /run/secrets/ctasia.com.crt \\
+    --cert /run/secrets/client.crt \\
+    --key /run/secrets/client_np.key \\
+    --data-binary \'@pack.tar.gz\' \\
+    \'https://docker.ctasia.com:2376/build?t=hub.ctasia.com/test:1.0.0\'
+'''
       }
     }
   }
