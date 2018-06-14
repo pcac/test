@@ -23,11 +23,11 @@ pipeline {
       steps {
         sh '''curl -fsSL \\
     -X POST \\
-    -H "Content-Type:application/json" \\
+    -H "X-Registry-Auth:eyJ1c2VybmFtZSI6InB1bm5hcGl0YyIsInBhc3N3b3JkIjoicHVubmFwaXRjIiwiZW1haWwiOiJwdW5uYXBpdGNAY3Rhc2lhLmNvbSIsInNlcnZlcmFkZHJlc3MiOiJodWIuY3Rhc2lhLmNvbSJ9" \\
     --cacert /run/secrets/ctasia.com.crt \\
     --cert /run/secrets/client.crt \\
     --key /run/secrets/client_np.key \\
-    \'https://docker.ctasia.com:2376/images/test/push?tag=1.0.0\'
+    \'https://docker.ctasia.com:2376/images/hub.ctasia.com/test/push?tag=1.0.0\'
 '''
       }
     }
